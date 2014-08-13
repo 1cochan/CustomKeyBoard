@@ -30,6 +30,8 @@ class KeyboardViewController: UIInputViewController {
     @IBOutlet weak var btnEnter: UIButton!
     @IBOutlet weak var btnDel: UIButton!
     
+    @IBOutlet weak var b : UIButton!
+    
     override func updateViewConstraints() {
         super.updateViewConstraints()
     
@@ -40,28 +42,39 @@ class KeyboardViewController: UIInputViewController {
         super.viewDidLoad()
     
         // Perform custom UI setup here
-//        self.nextKeyboardButton = UIButton.buttonWithType(.System) as UIButton
-//    
-//        self.nextKeyboardButton.setTitle(NSLocalizedString("Next Keyboard", comment: "Title for 'Next Keyboard' button"), forState: .Normal)
-//        self.nextKeyboardButton.sizeToFit()
-//        self.nextKeyboardButton.setTranslatesAutoresizingMaskIntoConstraints(false)
-//    
-//        self.nextKeyboardButton.addTarget(self, action: "advanceToNextInputMode", forControlEvents: .TouchUpInside)
+        self.nextKeyboardButton = UIButton.buttonWithType(.System) as UIButton
+    
+        self.nextKeyboardButton.setTitle(NSLocalizedString("Next Keyboard", comment: "Title for 'Next Keyboard' button"), forState: .Normal)
+        self.nextKeyboardButton.sizeToFit()
+        self.nextKeyboardButton.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.nextKeyboardButton.addTarget(self, action: "advanceToNextInputMode", forControlEvents: .TouchUpInside)
+        self.view.addSubview(self.nextKeyboardButton)
+        
+        b = UIButton.buttonWithType(UIButtonType.ContactAdd) as UIButton
+        b.setTitle(NSLocalizedString("btn", comment: "testBtn"), forState: .Normal)
+        b.sizeToFit()
+        b.setTranslatesAutoresizingMaskIntoConstraints(false)
+        b.addTarget(self, action: "btn", forControlEvents: .TouchUpInside)
+        self.view.addSubview(b)
+        
+        
+        var bButtonLeftSideConstraint = NSLayoutConstraint(item: b, attribute: .Left, relatedBy: .Equal, toItem: self.view, attribute: .Left, multiplier: 1.0, constant: 0.0)
+        var bButtonBottomConstraint = NSLayoutConstraint(item: b, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .Top, multiplier: 1.0, constant: 0.0)
+        self.view.addConstraints([bButtonLeftSideConstraint, bButtonBottomConstraint])
+        
+    
+        var nextKeyboardButtonLeftSideConstraint = NSLayoutConstraint(item: self.nextKeyboardButton, attribute: .Left, relatedBy: .Equal, toItem: self.view, attribute: .Left, multiplier: 1.0, constant: 0.0)
+        var nextKeyboardButtonBottomConstraint = NSLayoutConstraint(item: self.nextKeyboardButton, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1.0, constant: 0.0)
+        self.view.addConstraints([nextKeyboardButtonLeftSideConstraint, nextKeyboardButtonBottomConstraint])
+        
+//        var v = UINib(nibName:"CustomKeyboardXib", bundle:nil).instantiateWithOwner(self,options:nil)[0] as UIView
+//        self.inputView.addSubview(v)
 //        
-//        self.view.addSubview(self.nextKeyboardButton)
-//    
-//        var nextKeyboardButtonLeftSideConstraint = NSLayoutConstraint(item: self.nextKeyboardButton, attribute: .Left, relatedBy: .Equal, toItem: self.view, attribute: .Left, multiplier: 1.0, constant: 0.0)
-//        var nextKeyboardButtonBottomConstraint = NSLayoutConstraint(item: self.nextKeyboardButton, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1.0, constant: 0.0)
-//        self.view.addConstraints([nextKeyboardButtonLeftSideConstraint, nextKeyboardButtonBottomConstraint])
-        
-        var v = UINib(nibName:"CustomKeyboardXib", bundle:nil).instantiateWithOwner(self,options:nil)[0] as UIView
-        self.inputView.addSubview(v)
-        
-        btn0.addTarget(self, action: Selector("keyInput:"), forControlEvents: UIControlEvents.TouchUpInside)
+//        btn0.addTarget(self, action: Selector("keyInput:"), forControlEvents: UIControlEvents.TouchUpInside)
     }
     
-    @IBAction func changeToNextKeyboard(sender: AnyObject) {
-        advanceToNextInputMode()
+    func btn()->(){
+        
     }
     
     func keyInput(sender : AnyObject){
