@@ -51,10 +51,10 @@ class KeyboardViewController: UIInputViewController {
         self.view.addSubview(self.nextKeyboardButton)
         
         b = UIButton.buttonWithType(UIButtonType.ContactAdd) as UIButton
-        b.setTitle(NSLocalizedString("btn", comment: "testBtn"), forState: .Normal)
+        b.setTitle(NSLocalizedString("keyInput", comment: "testBtn"), forState: .Normal)
         b.sizeToFit()
         b.setTranslatesAutoresizingMaskIntoConstraints(false)
-        b.addTarget(self, action: "btn", forControlEvents: .TouchUpInside)
+        b.addTarget(self, action: "keyInput:", forControlEvents: .TouchUpInside)
         self.view.addSubview(b)
         
         
@@ -72,11 +72,6 @@ class KeyboardViewController: UIInputViewController {
 //        
 //        btn0.addTarget(self, action: Selector("keyInput:"), forControlEvents: UIControlEvents.TouchUpInside)
     }
-    
-    func btn()->(){
-        
-    }
-    
     func keyInput(sender : AnyObject){
         var proxy = textDocumentProxy as UITextDocumentProxy
         proxy.insertText(String(1))
