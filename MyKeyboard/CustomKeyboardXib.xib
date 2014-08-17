@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6205" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6205" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
     </dependencies>
@@ -7,7 +7,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KeyboardViewController">
             <connections>
                 <outlet property="btn0" destination="pc5-bt-52Q" id="Rg5-3f-h2h"/>
-                <outlet property="btn1" destination="U4q-qx-gz5" id="XCP-K3-0rT"/>
                 <outlet property="btn2" destination="KhD-2X-ukg" id="9UX-Wo-HdN"/>
                 <outlet property="btn3" destination="XRl-85-fFz" id="j57-oB-f5F"/>
                 <outlet property="btn4" destination="9a1-js-GU8" id="HVi-WB-Caa"/>
@@ -17,12 +16,6 @@
                 <outlet property="btn8" destination="VBA-Mk-vo0" id="POU-8e-mvU"/>
                 <outlet property="btn9" destination="CW7-YH-Mcu" id="Kx2-TV-iEi"/>
                 <outlet property="btnDel" destination="7qY-3O-KQW" id="Jtg-Xl-A7g"/>
-                <outlet property="btnDiv" destination="oqH-ph-Mpe" id="n98-Ls-3Pf"/>
-                <outlet property="btnEnter" destination="7yH-R3-EBH" id="7Re-Kj-9AX"/>
-                <outlet property="btnMinus" destination="kUT-8c-JbS" id="95K-Fg-X9q"/>
-                <outlet property="btnPlus" destination="Dtz-6s-q3r" id="a0d-DB-H6g"/>
-                <outlet property="btntimes" destination="BAq-ru-EGY" id="cFN-x9-nuK"/>
-                <outlet property="label" destination="zvq-Qn-pLQ" id="jBO-ba-4WA"/>
                 <outlet property="nextKeyboardButton" destination="68P-9e-ziI" id="9FY-ij-oUA"/>
             </connections>
         </placeholder>
@@ -33,6 +26,7 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pc5-bt-52Q">
                     <rect key="frame" x="48" y="124" width="30" height="30"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <state key="normal" title="0">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -46,29 +40,12 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="tapNum:" destination="-1" eventType="touchUpInside" id="o2F-wX-Y6z"/>
-                    </connections>
-                </button>
-                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9a1-js-GU8">
-                    <rect key="frame" x="10" y="48" width="30" height="30"/>
-                    <state key="normal" title="4">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="3"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                            <integer key="value" value="2"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="tapNum:" destination="-1" eventType="touchUpInside" id="NqJ-N8-OCU"/>
+                        <action selector="tapNumButton:" destination="-1" eventType="touchUpInside" id="5vr-le-pW8"/>
                     </connections>
                 </button>
                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4q-qx-gz5">
                     <rect key="frame" x="10" y="86" width="30" height="30"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <state key="normal" title="1">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -81,10 +58,15 @@
                             <integer key="value" value="2"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="tapNumButton:" destination="-1" eventType="touchUpInside" id="eWW-0U-3KA"/>
+                    </connections>
                 </button>
-                <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CW7-YH-Mcu">
-                    <rect key="frame" x="86" y="10" width="30" height="30"/>
-                    <state key="normal" title="9">
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhD-2X-ukg">
+                    <rect key="frame" x="48" y="86" width="30" height="30"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <state key="normal" title="2">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <userDefinedRuntimeAttributes>
@@ -97,11 +79,12 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="tapNum:" destination="-1" eventType="touchUpInside" id="XuB-l3-tLv"/>
+                        <action selector="tapNumButton:" destination="-1" eventType="touchUpInside" id="juM-mg-0KA"/>
                     </connections>
                 </button>
                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRl-85-fFz">
                     <rect key="frame" x="86" y="86" width="30" height="30"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <state key="normal" title="3">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -115,12 +98,13 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="tapNum:" destination="-1" eventType="touchUpInside" id="Ahc-aT-gSf"/>
+                        <action selector="tapNumButton:" destination="-1" eventType="touchUpInside" id="GLr-9d-F9W"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhD-2X-ukg">
-                    <rect key="frame" x="48" y="86" width="30" height="30"/>
-                    <state key="normal" title="2">
+                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9a1-js-GU8">
+                    <rect key="frame" x="10" y="48" width="30" height="30"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <state key="normal" title="4">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <userDefinedRuntimeAttributes>
@@ -133,29 +117,12 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="tapNum:" destination="-1" eventType="touchUpInside" id="xRH-fM-ZBN"/>
-                    </connections>
-                </button>
-                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEg-bW-Abh">
-                    <rect key="frame" x="86" y="48" width="30" height="30"/>
-                    <state key="normal" title="6">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="3"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                            <integer key="value" value="2"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="tapNum:" destination="-1" eventType="touchUpInside" id="WdO-GC-s8i"/>
+                        <action selector="tapNumButton:" destination="-1" eventType="touchUpInside" id="zHH-mp-57L"/>
                     </connections>
                 </button>
                 <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jH3-Ar-1De">
                     <rect key="frame" x="48" y="48" width="30" height="30"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <state key="normal" title="5">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -169,12 +136,13 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="tapNum:" destination="-1" eventType="touchUpInside" id="Vv3-9x-PpV"/>
+                        <action selector="tapNumButton:" destination="-1" eventType="touchUpInside" id="woq-yZ-Rih"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBA-Mk-vo0">
-                    <rect key="frame" x="48" y="10" width="30" height="30"/>
-                    <state key="normal" title="8">
+                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEg-bW-Abh">
+                    <rect key="frame" x="86" y="48" width="30" height="30"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <state key="normal" title="6">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <userDefinedRuntimeAttributes>
@@ -187,11 +155,12 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="tapNum:" destination="-1" eventType="touchUpInside" id="2WM-t2-jne"/>
+                        <action selector="tapNumButton:" destination="-1" eventType="touchUpInside" id="sk9-uC-lyq"/>
                     </connections>
                 </button>
                 <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yc-3i-k8b">
                     <rect key="frame" x="10" y="10" width="30" height="30"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <state key="normal" title="7">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -205,12 +174,51 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="tapNum:" destination="-1" eventType="touchUpInside" id="3GZ-Za-Ktt"/>
+                        <action selector="tapNumButton:" destination="-1" eventType="touchUpInside" id="i8Z-gm-GQ6"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBA-Mk-vo0">
+                    <rect key="frame" x="48" y="10" width="30" height="30"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <state key="normal" title="8">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="tapNumButton:" destination="-1" eventType="touchUpInside" id="P6A-f5-A1K"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CW7-YH-Mcu">
+                    <rect key="frame" x="86" y="10" width="30" height="30"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <state key="normal" title="9">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="tapNumButton:" destination="-1" eventType="touchUpInside" id="DSw-bI-GrG"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68P-9e-ziI">
                     <rect key="frame" x="162" y="124" width="98" height="30"/>
                     <color key="backgroundColor" red="0.95686274510000002" green="0.69803921570000005" blue="0.0039215686269999999" alpha="1" colorSpace="deviceRGB"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <state key="normal" title="next keyboard">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -218,98 +226,9 @@
                         <action selector="changeToNextKeyboard:" destination="-1" eventType="touchUpInside" id="VFK-N9-8UU"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqH-ph-Mpe">
-                    <rect key="frame" x="124" y="10" width="30" height="30"/>
-                    <state key="normal" title="/">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="3"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                            <integer key="value" value="2"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="tapOpe:" destination="-1" eventType="touchUpInside" id="EGO-U8-c3K"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUT-8c-JbS">
-                    <rect key="frame" x="124" y="86" width="30" height="30"/>
-                    <state key="normal" title="-">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="3"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                            <integer key="value" value="2"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="tapOpe:" destination="-1" eventType="touchUpInside" id="ig1-Qq-lDV"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAq-ru-EGY">
-                    <rect key="frame" x="124" y="48" width="30" height="30"/>
-                    <state key="normal" title="*">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="3"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                            <integer key="value" value="2"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="tapOpe:" destination="-1" eventType="touchUpInside" id="hcb-jF-hWz"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dtz-6s-q3r">
-                    <rect key="frame" x="124" y="124" width="30" height="30"/>
-                    <state key="normal" title="+">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="3"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                            <integer key="value" value="2"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="tapOpe:" destination="-1" eventType="touchUpInside" id="DlK-qE-e46"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yH-R3-EBH">
-                    <rect key="frame" x="162" y="48" width="30" height="30"/>
-                    <state key="normal" title="出力">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="3"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                            <integer key="value" value="2"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="tapEq:" destination="-1" eventType="touchUpInside" id="2YT-92-Pnz"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qY-3O-KQW">
                     <rect key="frame" x="162" y="10" width="30" height="30"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <state key="normal" title="⌫">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -323,53 +242,54 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="tapDel:" destination="-1" eventType="touchUpInside" id="YFG-fz-KQY"/>
+                        <action selector="btnDelete:" destination="-1" eventType="touchUpInside" id="oYN-la-utJ"/>
                     </connections>
                 </button>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ここに計算式" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvq-Qn-pLQ">
-                    <rect key="frame" x="162" y="90" width="102" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wE-4C-nmY">
+                    <rect key="frame" x="162" y="48" width="64" height="30"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <state key="normal" title="complete">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="btnCompleted:" destination="-1" eventType="touchUpInside" id="3He-dt-y0u"/>
+                    </connections>
+                </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="1" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="U4q-qx-gz5" firstAttribute="top" secondItem="9a1-js-GU8" secondAttribute="bottom" constant="8" id="0MN-3i-Odh"/>
-                <constraint firstItem="zvq-Qn-pLQ" firstAttribute="centerY" secondItem="U4q-qx-gz5" secondAttribute="centerY" id="3Z9-HK-pAx"/>
                 <constraint firstItem="9a1-js-GU8" firstAttribute="top" secondItem="2yc-3i-k8b" secondAttribute="bottom" constant="8" id="3hb-j8-cN7"/>
-                <constraint firstItem="oqH-ph-Mpe" firstAttribute="leading" secondItem="CW7-YH-Mcu" secondAttribute="trailing" constant="8" id="3qD-wU-npW"/>
                 <constraint firstItem="pc5-bt-52Q" firstAttribute="centerY" secondItem="68P-9e-ziI" secondAttribute="centerY" id="5nC-WA-Jdt"/>
-                <constraint firstItem="oqH-ph-Mpe" firstAttribute="centerY" secondItem="2yc-3i-k8b" secondAttribute="centerY" id="6Gh-38-209"/>
-                <constraint firstItem="BAq-ru-EGY" firstAttribute="centerY" secondItem="9a1-js-GU8" secondAttribute="centerY" id="7Dz-m2-e80"/>
                 <constraint firstItem="CW7-YH-Mcu" firstAttribute="centerY" secondItem="2yc-3i-k8b" secondAttribute="centerY" id="908-gc-IMU"/>
                 <constraint firstItem="7qY-3O-KQW" firstAttribute="leading" secondItem="68P-9e-ziI" secondAttribute="leading" id="Arm-uM-w5D"/>
                 <constraint firstItem="2yc-3i-k8b" firstAttribute="centerX" secondItem="9a1-js-GU8" secondAttribute="centerX" id="B70-Nm-n7U"/>
                 <constraint firstItem="VBA-Mk-vo0" firstAttribute="leading" secondItem="2yc-3i-k8b" secondAttribute="trailing" constant="8" id="DOK-ul-BV1"/>
                 <constraint firstItem="CW7-YH-Mcu" firstAttribute="centerX" secondItem="XRl-85-fFz" secondAttribute="centerX" id="FUA-xw-FNt"/>
                 <constraint firstItem="9a1-js-GU8" firstAttribute="centerY" secondItem="rEg-bW-Abh" secondAttribute="centerY" id="Fei-ae-njT"/>
-                <constraint firstItem="kUT-8c-JbS" firstAttribute="centerX" secondItem="Dtz-6s-q3r" secondAttribute="centerX" id="Udo-Pc-drH"/>
                 <constraint firstItem="2yc-3i-k8b" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Ui0-BI-6zx"/>
-                <constraint firstItem="kUT-8c-JbS" firstAttribute="centerY" secondItem="U4q-qx-gz5" secondAttribute="centerY" id="WGT-7h-XHS"/>
                 <constraint firstItem="jH3-Ar-1De" firstAttribute="centerY" secondItem="9a1-js-GU8" secondAttribute="centerY" id="b8a-R1-6Yg"/>
-                <constraint firstItem="Dtz-6s-q3r" firstAttribute="centerY" secondItem="pc5-bt-52Q" secondAttribute="centerY" id="bQf-yO-5Vc"/>
                 <constraint firstItem="VBA-Mk-vo0" firstAttribute="centerX" secondItem="pc5-bt-52Q" secondAttribute="centerX" id="bdO-R0-23B"/>
-                <constraint firstItem="7yH-R3-EBH" firstAttribute="centerY" secondItem="9a1-js-GU8" secondAttribute="centerY" id="csT-Hx-1RW"/>
+                <constraint firstItem="7qY-3O-KQW" firstAttribute="leading" secondItem="CW7-YH-Mcu" secondAttribute="trailing" constant="46" id="cbx-Qd-Y8v"/>
                 <constraint firstItem="jH3-Ar-1De" firstAttribute="centerX" secondItem="VBA-Mk-vo0" secondAttribute="centerX" id="dke-Yd-qiM"/>
                 <constraint firstItem="U4q-qx-gz5" firstAttribute="centerY" secondItem="XRl-85-fFz" secondAttribute="centerY" id="j73-aN-rpk"/>
-                <constraint firstItem="7qY-3O-KQW" firstAttribute="leading" secondItem="BAq-ru-EGY" secondAttribute="trailing" constant="8" id="jMW-xA-pV2"/>
                 <constraint firstItem="2yc-3i-k8b" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="lJ0-5g-v01"/>
                 <constraint firstItem="2yc-3i-k8b" firstAttribute="centerY" secondItem="7qY-3O-KQW" secondAttribute="centerY" id="lTo-8a-r3u"/>
-                <constraint firstItem="7qY-3O-KQW" firstAttribute="leading" secondItem="7yH-R3-EBH" secondAttribute="leading" id="lvg-ub-itV"/>
-                <constraint firstItem="kUT-8c-JbS" firstAttribute="centerX" secondItem="oqH-ph-Mpe" secondAttribute="centerX" id="num-qn-ufd"/>
                 <constraint firstItem="CW7-YH-Mcu" firstAttribute="centerX" secondItem="rEg-bW-Abh" secondAttribute="centerX" id="ouG-Vc-eTD"/>
-                <constraint firstItem="zvq-Qn-pLQ" firstAttribute="leading" secondItem="7qY-3O-KQW" secondAttribute="leading" id="pf6-X0-kgs"/>
                 <constraint firstItem="KhD-2X-ukg" firstAttribute="centerX" secondItem="VBA-Mk-vo0" secondAttribute="centerX" id="pxa-9X-3g3"/>
                 <constraint firstItem="pc5-bt-52Q" firstAttribute="top" secondItem="KhD-2X-ukg" secondAttribute="bottom" constant="8" id="qpH-sY-zqt"/>
                 <constraint firstItem="VBA-Mk-vo0" firstAttribute="centerY" secondItem="2yc-3i-k8b" secondAttribute="centerY" id="sXA-Cr-Fev"/>
                 <constraint firstItem="CW7-YH-Mcu" firstAttribute="leading" secondItem="VBA-Mk-vo0" secondAttribute="trailing" constant="8" id="tiu-Rb-Z52"/>
                 <constraint firstItem="U4q-qx-gz5" firstAttribute="centerX" secondItem="2yc-3i-k8b" secondAttribute="centerX" id="wVf-G1-010"/>
-                <constraint firstItem="kUT-8c-JbS" firstAttribute="centerX" secondItem="BAq-ru-EGY" secondAttribute="centerX" id="wuP-nw-yj6"/>
                 <constraint firstItem="KhD-2X-ukg" firstAttribute="centerY" secondItem="U4q-qx-gz5" secondAttribute="centerY" id="z52-bI-jER"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

@@ -42,41 +42,47 @@ class KeyboardViewController: UIInputViewController {
         super.viewDidLoad()
     
         // Perform custom UI setup here
-        self.nextKeyboardButton = UIButton.buttonWithType(.System) as UIButton
-    
-        self.nextKeyboardButton.setTitle(NSLocalizedString("Next Keyboard", comment: "Title for 'Next Keyboard' button"), forState: .Normal)
-        self.nextKeyboardButton.sizeToFit()
-        self.nextKeyboardButton.setTranslatesAutoresizingMaskIntoConstraints(false)
-        self.nextKeyboardButton.addTarget(self, action: "advanceToNextInputMode", forControlEvents: .TouchUpInside)
-        self.view.addSubview(self.nextKeyboardButton)
-        
-        b = UIButton.buttonWithType(UIButtonType.ContactAdd) as UIButton
-        b.setTitle(NSLocalizedString("keyInput", comment: "testBtn"), forState: .Normal)
-        b.sizeToFit()
-        b.setTranslatesAutoresizingMaskIntoConstraints(false)
-        b.addTarget(self, action: "keyInput:", forControlEvents: .TouchUpInside)
-        self.view.addSubview(b)
-        
-        
-        var bButtonLeftSideConstraint = NSLayoutConstraint(item: b, attribute: .Left, relatedBy: .Equal, toItem: self.view, attribute: .Left, multiplier: 1.0, constant: 0.0)
-        var bButtonBottomConstraint = NSLayoutConstraint(item: b, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .Top, multiplier: 1.0, constant: 0.0)
-        self.view.addConstraints([bButtonLeftSideConstraint, bButtonBottomConstraint])
-        
-    
-        var nextKeyboardButtonLeftSideConstraint = NSLayoutConstraint(item: self.nextKeyboardButton, attribute: .Left, relatedBy: .Equal, toItem: self.view, attribute: .Left, multiplier: 1.0, constant: 0.0)
-        var nextKeyboardButtonBottomConstraint = NSLayoutConstraint(item: self.nextKeyboardButton, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1.0, constant: 0.0)
-        self.view.addConstraints([nextKeyboardButtonLeftSideConstraint, nextKeyboardButtonBottomConstraint])
-        
-//        var v = UINib(nibName:"CustomKeyboardXib", bundle:nil).instantiateWithOwner(self,options:nil)[0] as UIView
-//        self.inputView.addSubview(v)
+//        self.nextKeyboardButton = UIButton.buttonWithType(.System) as UIButton
+//    
+//        self.nextKeyboardButton.setTitle(NSLocalizedString("Next Keyboard", comment: "Title for 'Next Keyboard' button"), forState: .Normal)
+//        self.nextKeyboardButton.sizeToFit()
+//        self.nextKeyboardButton.setTranslatesAutoresizingMaskIntoConstraints(false)
+//        self.nextKeyboardButton.addTarget(self, action: "advanceToNextInputMode", forControlEvents: .TouchUpInside)
+//        self.view.addSubview(self.nextKeyboardButton)
 //        
-//        btn0.addTarget(self, action: Selector("keyInput:"), forControlEvents: UIControlEvents.TouchUpInside)
+//        b = UIButton.buttonWithType(UIButtonType.ContactAdd) as UIButton
+//        b.setTitle(NSLocalizedString("keyInput", comment: "testBtn"), forState: .Normal)
+//        b.sizeToFit()
+//        b.setTranslatesAutoresizingMaskIntoConstraints(false)
+//        b.addTarget(self, action: "keyInput:", forControlEvents: .TouchUpInside)
+//        self.view.addSubview(b)
+//        
+//        
+//        var bButtonLeftSideConstraint = NSLayoutConstraint(item: b, attribute: .Left, relatedBy: .Equal, toItem: self.view, attribute: .Left, multiplier: 1.0, constant: 0.0)
+//        var bButtonBottomConstraint = NSLayoutConstraint(item: b, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .Top, multiplier: 1.0, constant: 0.0)
+//        self.view.addConstraints([bButtonLeftSideConstraint, bButtonBottomConstraint])
+//        
+//    
+//        var nextKeyboardButtonLeftSideConstraint = NSLayoutConstraint(item: self.nextKeyboardButton, attribute: .Left, relatedBy: .Equal, toItem: self.view, attribute: .Left, multiplier: 1.0, constant: 0.0)
+//        var nextKeyboardButtonBottomConstraint = NSLayoutConstraint(item: self.nextKeyboardButton, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1.0, constant: 0.0)
+//        self.view.addConstraints([nextKeyboardButtonLeftSideConstraint, nextKeyboardButtonBottomConstraint])
+        
+        var v = UINib(nibName:"CustomKeyboardXib", bundle:nil).instantiateWithOwner(self,options:nil)[0] as UIView
+        self.inputView.addSubview(v)
     }
-    func keyInput(sender : AnyObject){
+    @IBAction func tapNumButton(sender: AnyObject) {
         var proxy = textDocumentProxy as UITextDocumentProxy
-        proxy.insertText(String(1))
-
+        proxy.insertText((sender as UIButton).titleLabel.text)
     }
+    
+    @IBAction func btnDelete(sender: AnyObject) {
+        var proxy = textDocumentProxy as UITextDocumentProxy
+        proxy.deleteBackward()
+    }
+    @IBAction func btnCompleted(sender: AnyObject) {
+        self.dismissKeyboard()
+    }
+    
 
     override func textWillChange(textInput: UITextInput) {
         println(textInput.description)
