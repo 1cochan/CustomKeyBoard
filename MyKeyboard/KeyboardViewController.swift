@@ -47,7 +47,7 @@ class KeyboardViewController: UIInputViewController {
 //        self.nextKeyboardButton.setTitle(NSLocalizedString("Next Keyboard", comment: "Title for 'Next Keyboard' button"), forState: .Normal)
 //        self.nextKeyboardButton.sizeToFit()
 //        self.nextKeyboardButton.setTranslatesAutoresizingMaskIntoConstraints(false)
-//        self.nextKeyboardButton.addTarget(self, action: "advanceToNextInputMode", forControlEvents: .TouchUpInside)
+//        self.nextKeyboardButton!.addTarget(self, action: "advanceToNextInputMode", forControlEvents: .TouchUpInside)
 //        self.view.addSubview(self.nextKeyboardButton)
 //        
 //        b = UIButton.buttonWithType(UIButtonType.ContactAdd) as UIButton
@@ -69,11 +69,16 @@ class KeyboardViewController: UIInputViewController {
         
         var v = UINib(nibName:"CustomKeyboardXib", bundle:nil).instantiateWithOwner(self,options:nil)[0] as UIView
         self.inputView.addSubview(v)
+        self.nextKeyboardButton!.addTarget(self, action: "advanceToNextInputMode", forControlEvents: .TouchUpInside)
+
     }
     @IBAction func tapNumButton(sender: AnyObject) {
         var proxy = textDocumentProxy as UITextDocumentProxy
-        proxy.insertText((sender as UIButton).titleLabel.text)
+        
+        var txt = sender.titleLabel??.text!
+        proxy.insertText(txt!)
     }
+    
     
     @IBAction func btnDelete(sender: AnyObject) {
         var proxy = textDocumentProxy as UITextDocumentProxy
