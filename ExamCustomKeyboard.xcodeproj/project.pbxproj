@@ -15,6 +15,14 @@
 		0474ABF11999EB050059565A /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474ABF01999EB050059565A /* KeyboardViewController.swift */; };
 		0474ABF41999EB050059565A /* MyKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0474ABEC1999EB050059565A /* MyKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0474AC001999ECB30059565A /* MyInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474ABFF1999ECB30059565A /* MyInputViewController.swift */; };
+		5115823919C5F3D800B0E3AE /* NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5115823819C5F3D800B0E3AE /* NSLayoutConstraint.swift */; };
+		5115823A19C5F62C00B0E3AE /* NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5115823819C5F3D800B0E3AE /* NSLayoutConstraint.swift */; };
+		5115823E19C5F76A00B0E3AE /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5115823D19C5F76A00B0E3AE /* Array.swift */; };
+		5115823F19C5F7A400B0E3AE /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5115823D19C5F76A00B0E3AE /* Array.swift */; };
+		FC372BD519C805930027ACBB /* nextKeyboardButton.png in Resources */ = {isa = PBXBuildFile; fileRef = FC372BD419C805930027ACBB /* nextKeyboardButton.png */; };
+		FC372BD719C815420027ACBB /* KeyboardViewControllerExUnUsed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC372BD619C815420027ACBB /* KeyboardViewControllerExUnUsed.swift */; };
+		FC3E6AAB19C18090000E4B9C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3E6AAA19C18090000E4B9C /* UIView.swift */; };
+		FC8DCA3419C1341000C84261 /* CustomKeyboardXib_alphabet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC8DCA3319C1341000C84261 /* CustomKeyboardXib_alphabet.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +70,12 @@
 		0474ABEF1999EB050059565A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0474ABF01999EB050059565A /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		0474ABFF1999ECB30059565A /* MyInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyInputViewController.swift; sourceTree = "<group>"; };
+		5115823819C5F3D800B0E3AE /* NSLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraint.swift; sourceTree = "<group>"; };
+		5115823D19C5F76A00B0E3AE /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		FC372BD419C805930027ACBB /* nextKeyboardButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nextKeyboardButton.png; sourceTree = "<group>"; };
+		FC372BD619C815420027ACBB /* KeyboardViewControllerExUnUsed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardViewControllerExUnUsed.swift; sourceTree = "<group>"; };
+		FC3E6AAA19C18090000E4B9C /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		FC8DCA3319C1341000C84261 /* CustomKeyboardXib_alphabet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomKeyboardXib_alphabet.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +99,7 @@
 		0474ABBD1999EAD60059565A = {
 			isa = PBXGroup;
 			children = (
+				5115823B19C5F63400B0E3AE /* libs */,
 				0474ABC81999EAD60059565A /* ExamCustomKeyboard */,
 				0474ABDB1999EAD60059565A /* ExamCustomKeyboardTests */,
 				0474ABED1999EB050059565A /* MyKeyboard */,
@@ -141,7 +156,10 @@
 		0474ABED1999EB050059565A /* MyKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				FC372BD419C805930027ACBB /* nextKeyboardButton.png */,
 				0474ABF01999EB050059565A /* KeyboardViewController.swift */,
+				FC372BD619C815420027ACBB /* KeyboardViewControllerExUnUsed.swift */,
+				FC8DCA3319C1341000C84261 /* CustomKeyboardXib_alphabet.xib */,
 				042F7C46199B19C10080B70F /* CustomKeyboardXib.xib */,
 				0474ABEE1999EB050059565A /* Supporting Files */,
 				0474ABFF1999ECB30059565A /* MyInputViewController.swift */,
@@ -155,6 +173,16 @@
 				0474ABEF1999EB050059565A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5115823B19C5F63400B0E3AE /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				5115823819C5F3D800B0E3AE /* NSLayoutConstraint.swift */,
+				FC3E6AAA19C18090000E4B9C /* UIView.swift */,
+				5115823D19C5F76A00B0E3AE /* Array.swift */,
+			);
+			name = libs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +277,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC372BD519C805930027ACBB /* nextKeyboardButton.png in Resources */,
+				FC8DCA3419C1341000C84261 /* CustomKeyboardXib_alphabet.xib in Resources */,
 				042F7C47199B19C10080B70F /* CustomKeyboardXib.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +290,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5115823919C5F3D800B0E3AE /* NSLayoutConstraint.swift in Sources */,
+				5115823E19C5F76A00B0E3AE /* Array.swift in Sources */,
+				FC3E6AAB19C18090000E4B9C /* UIView.swift in Sources */,
 				0474ABCE1999EAD60059565A /* ViewController.swift in Sources */,
 				0474ABCC1999EAD60059565A /* AppDelegate.swift in Sources */,
 			);
@@ -270,6 +303,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0474ABF11999EB050059565A /* KeyboardViewController.swift in Sources */,
+				5115823F19C5F7A400B0E3AE /* Array.swift in Sources */,
+				FC372BD719C815420027ACBB /* KeyboardViewControllerExUnUsed.swift in Sources */,
+				5115823A19C5F62C00B0E3AE /* NSLayoutConstraint.swift in Sources */,
 				0474AC001999ECB30059565A /* MyInputViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,9 +417,11 @@
 		0474ABE31999EAD60059565A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = ExamCustomKeyboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -392,9 +430,11 @@
 		0474ABE41999EAD60059565A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = ExamCustomKeyboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

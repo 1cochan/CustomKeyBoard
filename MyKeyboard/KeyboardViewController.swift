@@ -7,21 +7,26 @@
 //
 
 import UIKit
+//extension UIView{
+//    class func getWindow()->(UIView){
+//        return UIApplication.sharedApplication().keyWindow
+//    }
+//}
 
 class KeyboardViewController: UIInputViewController {
-
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    override required init() {
+        super.init()
+    }
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
     @IBOutlet weak var nextKeyboardButton: UIButton!
-
-    @IBOutlet weak var btn0: UIButton!
-    @IBOutlet weak var btn1: UIButton!
-    @IBOutlet weak var btn2: UIButton!
-    @IBOutlet weak var btn3: UIButton!
-    @IBOutlet weak var btn4: UIButton!
-    @IBOutlet weak var btn5: UIButton!
-    @IBOutlet weak var btn6: UIButton!
-    @IBOutlet weak var btn7: UIButton!
-    @IBOutlet weak var btn8: UIButton!
-    @IBOutlet weak var btn9: UIButton!
+    
     @IBOutlet weak var btnPlus: UIButton!
     @IBOutlet weak var btnMinus: UIButton!
     @IBOutlet weak var btntimes: UIButton!
@@ -32,50 +37,52 @@ class KeyboardViewController: UIInputViewController {
     
     @IBOutlet weak var b : UIButton!
     
+    var _initialFrame : CGRect = CGRectZero;
+    
     override func updateViewConstraints() {
         super.updateViewConstraints()
-    
-        // Add custom view sizing constraints here
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        // Perform custom UI setup here
-//        self.nextKeyboardButton = UIButton.buttonWithType(.System) as UIButton
-//    
-//        self.nextKeyboardButton.setTitle(NSLocalizedString("Next Keyboard", comment: "Title for 'Next Keyboard' button"), forState: .Normal)
-//        self.nextKeyboardButton.sizeToFit()
-//        self.nextKeyboardButton.setTranslatesAutoresizingMaskIntoConstraints(false)
-//        self.nextKeyboardButton!.addTarget(self, action: "advanceToNextInputMode", forControlEvents: .TouchUpInside)
-//        self.view.addSubview(self.nextKeyboardButton)
-//        
-//        b = UIButton.buttonWithType(UIButtonType.ContactAdd) as UIButton
-//        b.setTitle(NSLocalizedString("keyInput", comment: "testBtn"), forState: .Normal)
-//        b.sizeToFit()
-//        b.setTranslatesAutoresizingMaskIntoConstraints(false)
-//        b.addTarget(self, action: "keyInput:", forControlEvents: .TouchUpInside)
-//        self.view.addSubview(b)
-//        
-//        
-//        var bButtonLeftSideConstraint = NSLayoutConstraint(item: b, attribute: .Left, relatedBy: .Equal, toItem: self.view, attribute: .Left, multiplier: 1.0, constant: 0.0)
-//        var bButtonBottomConstraint = NSLayoutConstraint(item: b, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .Top, multiplier: 1.0, constant: 0.0)
-//        self.view.addConstraints([bButtonLeftSideConstraint, bButtonBottomConstraint])
-//        
-//    
-//        var nextKeyboardButtonLeftSideConstraint = NSLayoutConstraint(item: self.nextKeyboardButton, attribute: .Left, relatedBy: .Equal, toItem: self.view, attribute: .Left, multiplier: 1.0, constant: 0.0)
-//        var nextKeyboardButtonBottomConstraint = NSLayoutConstraint(item: self.nextKeyboardButton, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1.0, constant: 0.0)
-//        self.view.addConstraints([nextKeyboardButtonLeftSideConstraint, nextKeyboardButtonBottomConstraint])
         
-        var v = UINib(nibName:"CustomKeyboardXib", bundle:nil).instantiateWithOwner(self,options:nil)[0] as UIView
+        var v = UINib(nibName:"CustomKeyboardXib_alphabet", bundle:nil).instantiateWithOwner(self,options:nil)[0] as UIView
         self.inputView.addSubview(v)
+        
+        //                self.inputView.setTranslatesAutoresizingMaskIntoConstraints(false)
         self.nextKeyboardButton!.addTarget(self, action: "advanceToNextInputMode", forControlEvents: .TouchUpInside)
-
+    }
+    override func viewWillAppear(animated: Bool) {
+        println("viewWillAppear _initialFrame" + NSStringFromCGRect(self.view.frame))
+    }
+    override func viewDidAppear(animated: Bool) {
+        _initialFrame = self.view.frame
+        println("viewDidAppear _initialFrame" + NSStringFromCGRect(_initialFrame))
+//        changeHeight()
+    }
+    
+    func changeHeight(){
+        let expandedHeight:CGFloat = _initialFrame.size.height + 100
+        let heightConstraint = NSLayoutConstraint(item:self.view,
+            attribute: .Height,
+            relatedBy: .Equal,
+            toItem: nil,
+            attribute: .NotAnAttribute,
+            multiplier: 0.0,
+            constant: expandedHeight)
+        self.view.addConstraint(heightConstraint)
+        
     }
     @IBAction func tapNumButton(sender: AnyObject) {
+        
+        self.inputView.inputAccessoryView
         var proxy = textDocumentProxy as UITextDocumentProxy
         
+        
+        //        self.view.inputAccessoryView
+        //        self.inputAccessoryView = UIView(frame: CGRectMake(0, 0, 100, 100))
         var txt = sender.titleLabel??.text!
+        
         proxy.insertText(txt!)
     }
     
@@ -88,14 +95,13 @@ class KeyboardViewController: UIInputViewController {
         self.dismissKeyboard()
     }
     
-
-    override func textWillChange(textInput: UITextInput) {
-        println(textInput.description)
+    override func textWillChange(textInput: UITextInput?) {
+        //        println("textWillChange" + textInput!.description!)
     }
-
-    override func textDidChange(textInput: UITextInput) {
-        println(textInput.description)
     
+    override func textDidChange(textInput: UITextInput?) {
+        //        println("textDidChange" + textInput!.description!)
+        
         var textColor: UIColor
         var proxy = self.textDocumentProxy as UITextDocumentProxy
         if proxy.keyboardAppearance == UIKeyboardAppearance.Dark {
@@ -105,5 +111,6 @@ class KeyboardViewController: UIInputViewController {
         }
         self.nextKeyboardButton.setTitleColor(textColor, forState: .Normal)
     }
-
+    
+    
 }
